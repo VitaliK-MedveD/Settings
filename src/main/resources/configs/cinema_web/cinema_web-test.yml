@@ -9,10 +9,12 @@ spring:
       ddl-auto: update
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 service:
-  mail:
-    email: vitalik_test@mail.ru
-    user-name: test
-    password: 123456
+  encrypt:
+    cryptographicHashingAlgorithm: "SHA1PRNG"
+    keyGenerationAlgorithm: "PBKDF2WithHmacSHA1"
+    saltLength: 8
+    derivedKeyLength: 128
+    iterations: 20000
 clients:
   description:
-    url: http://localhost:8877/api/v1/file/
+    url: https://api.kinopoisk.dev/v1.3/movie
